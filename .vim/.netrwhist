@@ -1,0 +1,11 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =9
+let g:netrw_dirhist_1='/home/zhangbiao/src/my_mola_client'
+let g:netrw_dirhist_2='/home/zhangbiao/mola-cs/ibase/gm/mola2/chunkserver'
+let g:netrw_dirhist_3='/home/zhangbiao/mola-cs-test/ibase/gm/mola2/chunkserver/unittest/conf'
+let g:netrw_dirhist_4='/home/zhangbiao/mola-src/ibase/gm/mola/mlot/scripts/ps-di/decrease_copy'
+let g:netrw_dirhist_5='/home/zhangbiao/mola-src/ibase/gm'
+let g:netrw_dirhist_6='/home/zhangbiao/mola-src/ibase/gm/mola'
+let g:netrw_dirhist_7='/home/zhangbiao/mola-src/ibase/gm/mola2'
+let g:netrw_dirhist_8='/home/zhangbiao/mola-dev/ibase/gm/mola/mlot'
+let g:netrw_dirhist_9='/home/zhangbiao/mola-bugs/lib2-64/bsl'
