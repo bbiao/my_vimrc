@@ -1,8 +1,8 @@
 "set fileencodings=gb18030,utf-8
 "set fileencodings=gbk,utf-8
-set fileencodings=cp936
+set fileencodings=cp936,utf-8
 "set termencoding=cp936
-set termencoding=utf-8
+set termencoding=utf-8,cp936
 set encoding=utf-8
 set nu
 set hls 
