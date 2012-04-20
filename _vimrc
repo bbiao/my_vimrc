@@ -1,6 +1,7 @@
 "  Modeline and Notes {
 	" Original developed by http://robertmelton.com/contact (many forms of communication)
 	" Mod by @bbiao http://www.agilephp.net
+	" If you have any questions, you can contact one of us
 " }
 
 " pathogen {
