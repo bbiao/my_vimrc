@@ -9,9 +9,9 @@
 " }
 
 " Encoding {
-	set fileencodings=gbk,ucs-bom,utf-8
-	set fileencoding=gbk
-	set termencoding=gbk
+	set fileencodings=ucs-bom,utf-8,gbk
+	set fileencoding=utf-8
+	set termencoding=utf-8
 	set encoding=utf-8
 	"set encoding=gbk
 " }
@@ -114,8 +114,8 @@
 
 " Text Formatting/Layout {
 	"set completeopt= " don't use a pop up menu for completions
-	set noexpandtab " no real tabs please!
-	"set expandtab
+	"set noexpandtab " no real tabs please!
+	set expandtab
 	set formatoptions=rq " Automatically insert comment leader on return, and let gq format comments
 	set ignorecase " case insensitive by default
 	set infercase " case inferred by default
@@ -192,6 +192,12 @@
 " }
 
 " Autocommands {
+	" Python {
+		autocmd BufWritePost *.py call Pyflakes()
+		autocmd BufWritePost *.py call Pep8()
+        "autocmd FileType python map <buffer> <F3> :call Pyflakes()<CR>
+        "autocmd FileType python map <buffer> <F4> :call Pep8()<CR>
+	" }
 	" Ruby {
 		" ruby standard 2 spaces, always
 	 	"au BufRead,BufNewFile *.rb,*.rhtml set shiftwidth=2 
@@ -221,7 +227,7 @@
 if has("gui_running") " {
 	" Basics {
 		"colorscheme metacosm " my color scheme (only works in GUI)
-		set guifont=Consolas:h10 " My favorite font
+		"set guifont=Consolas:h10 " My favorite font
    		"set guioptions=ce 
    		"			   ||
 		"			   |+-- use simple dialogs rather than pop-ups
