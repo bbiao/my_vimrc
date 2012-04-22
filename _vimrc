@@ -50,7 +50,7 @@
     set fileformats=unix " support all three, in this order
     set hidden " you can change buffers without saving
     " (XXX: #VIM/tpope warns the line below could break things)
-      "set mouse=a " use mouse everywhere
+    "set mouse=a " use mouse everywhere
     set noerrorbells " don't make noise
     set whichwrap=b,s,h,l,<,>,~,[,] " everything wraps
     "             | | | | | | | | |
@@ -74,9 +74,9 @@
     set cursorline " highlight current line
     set incsearch " BUT do highlight as you type you search phrase
     set laststatus=2 " always show the status line
-       "set lazyredraw " do not redraw while running macros
+    "set lazyredraw " do not redraw while running macros
     set linespace=0 " don't insert any extra pixel lines betweens rows out of my files
-       "set matchtime=5 " how many tenths of a second to blink matching brackets for
+    "set matchtime=5 " how many tenths of a second to blink matching brackets for
     set hlsearch " do not highlight searched for phrases
     set nostartofline " leave my cursor where it was
     set novisualbell " don't blink
@@ -119,12 +119,12 @@
     set formatoptions=rq " Automatically insert comment leader on return, and let gq format comments
     set ignorecase " case insensitive by default
     set infercase " case inferred by default
-       "set nowrap " do not wrap line
+    "set nowrap " do not wrap line
     set shiftround " when at 3 spaces, and I hit > ... go to 4, not 5
     set smartcase " if there are caps, go case-sensitive
-       set shiftwidth=4 " auto-indent amount when using cindent, >>, << and stuff like that
+    set shiftwidth=4 " auto-indent amount when using cindent, >>, << and stuff like that
     set softtabstop=4 " when hitting tab or backspace, how many spaces should a tab be (see expandtab)
-       set tabstop=4 " real tabs should be 8, and they will show with set list on
+    set tabstop=4 " real tabs should be 8, and they will show with set list on
     set textwidth=100
     if has("autocmd")
         au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal g'\"" | endif
@@ -200,25 +200,25 @@
     " }
     " Ruby {
         " ruby standard 2 spaces, always
-         "au BufRead,BufNewFile *.rb,*.rhtml set shiftwidth=2 
-          "au BufRead,BufNewFile *.rb,*.rhtml set softtabstop=2 
+        "au BufRead,BufNewFile *.rb,*.rhtml set shiftwidth=2 
+        "au BufRead,BufNewFile *.rb,*.rhtml set softtabstop=2 
     " }
     " Notes {
         " I consider .notes files special, and handle them differently, I
         " should probably put this in another file
-          "au BufRead,BufNewFile *.notes set foldlevel=2
-          "au BufRead,BufNewFile *.notes set foldmethod=indent
-         "au BufRead,BufNewFile *.notes set foldtext=foldtext()
-          "au BufRead,BufNewFile *.notes set listchars=tab:\ \ 
-          "au BufRead,BufNewFile *.notes set noexpandtab
-          "au BufRead,BufNewFile *.notes set shiftwidth=8
-         "au BufRead,BufNewFile *.notes set softtabstop=8
-          "au BufRead,BufNewFile *.notes set tabstop=8
-          "au BufRead,BufNewFile *.notes set syntax=notes
-          "au BufRead,BufNewFile *.notes set nocursorcolumn
-          "au BufRead,BufNewFile *.notes set nocursorline
-          "au BufRead,BufNewFile *.notes set guifont=Consolas:h12
-          "au BufRead,BufNewFile *.notes set spell
+        "au BufRead,BufNewFile *.notes set foldlevel=2
+        "au BufRead,BufNewFile *.notes set foldmethod=indent
+        "au BufRead,BufNewFile *.notes set foldtext=foldtext()
+        "au BufRead,BufNewFile *.notes set listchars=tab:\ \ 
+        "au BufRead,BufNewFile *.notes set noexpandtab
+        "au BufRead,BufNewFile *.notes set shiftwidth=8
+        "au BufRead,BufNewFile *.notes set softtabstop=8
+        "au BufRead,BufNewFile *.notes set tabstop=8
+        "au BufRead,BufNewFile *.notes set syntax=notes
+        "au BufRead,BufNewFile *.notes set nocursorcolumn
+        "au BufRead,BufNewFile *.notes set nocursorline
+        "au BufRead,BufNewFile *.notes set guifont=Consolas:h12
+        "au BufRead,BufNewFile *.notes set spell
     " }
     "au BufNewFile,BufRead *.ahk setf ahk 
 " }
@@ -228,13 +228,13 @@ if has("gui_running") " {
     " Basics {
         "colorscheme metacosm " my color scheme (only works in GUI)
         "set guifont=Consolas:h10 " My favorite font
-           "set guioptions=ce 
-           "               ||
+        "set guioptions=ce 
+        "               ||
         "               |+-- use simple dialogs rather than pop-ups
         "               +--- use GUI tabs, not console style tabs
-         set lines=55 " perfect size for me
-         set columns=120
-          set mousehide " hide the mouse cursor when typing
+        set lines=55 " perfect size for me
+        set columns=120
+        set mousehide " hide the mouse cursor when typing
     " }
 
     "map <F9> <ESC>:set guifont=Consolas:h10<CR>
