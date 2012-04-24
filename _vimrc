@@ -111,7 +111,7 @@
 
     hi StatusLine ctermbg=cyan ctermfg=black cterm=NONE guibg=cyan guifg=black gui=NONE
     hi StatusLineNC ctermbg=cyan ctermfg=black cterm=REVERSE guibg=cyan guifg=black gui=REVERSE
-    hi VertSplit ctermbg=black ctermfg=cyan cterm=NONE guibg=black guifg=cyan gui=NONE
+    hi VertSplit ctermbg=cyan ctermfg=black cterm=NONE guibg=cyan guifg=black gui=NONE
 "}
 
 " Text Formatting/Layout {
