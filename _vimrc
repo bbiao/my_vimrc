@@ -150,9 +150,9 @@
     highlight TooLong ctermbg=grey
 
     autocmd FileType cpp match TooLong '\%>100v.*'
-   
+
     autocmd FileType python match TooLong '\%>80v.*'
-    autocmd FileType python inoremap # X# 
+    autocmd FileType python inoremap # X#
 
     autocmd FileType make set noexpandtab
     autocmd FileType diff nmap <C-n> /^+\\|^-<CR>
