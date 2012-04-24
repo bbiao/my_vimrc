@@ -128,6 +128,7 @@
     set softtabstop=4 " when hitting tab or backspace, how many spaces should a tab be (see expandtab)
     set tabstop=4 " real tabs should be 8, and they will show with set list on
     set textwidth=100
+    set smartindent
     if has("autocmd")
         au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal g'\"" | endif
     endif
@@ -147,9 +148,12 @@
 
 " FileType Settings {
     highlight TooLong ctermbg=grey
+
     autocmd FileType cpp match TooLong '\%>100v.*'
+   
     autocmd FileType python match TooLong '\%>80v.*'
-    
+    autocmd FileType python inoremap # X# 
+
     autocmd FileType make set noexpandtab
     autocmd FileType diff nmap <C-n> /^+\\|^-<CR>
     autocmd FileType svnlog nmap q :q<CR>
