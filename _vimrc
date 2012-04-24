@@ -109,7 +109,9 @@
     "hi CursorColumn cterm=NONE ctermbg=darkcyan ctermfg=white guibg=darkred guifg=white
     nnoremap <Leader>c :set cursorline! cursorcolumn!<CR>
 
-    hi StatusLine ctermbg=black ctermfg=cyan cterm=NONE guibg=black guifg=cyan gui=NONE
+    hi StatusLine ctermbg=cyan ctermfg=black cterm=NONE guibg=cyan guifg=black gui=NONE
+    hi StatusLineNC ctermbg=cyan ctermfg=black cterm=REVERSE guibg=cyan guifg=black gui=REVERSE
+    hi VertSplit ctermbg=black ctermfg=cyan cterm=NONE guibg=black guifg=cyan gui=NONE
 "}
 
 " Text Formatting/Layout {
