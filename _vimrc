@@ -19,6 +19,7 @@
 " Basics {
     set nocompatible " explicitly get out of vi-compatible mode
     set noexrc " don't use local version of .(g)vimrc, .exrc
+    set t_Co=256
     set background=dark " we plan to use a dark background
     set cpoptions=aABceFsmq
     "             |||||||||
@@ -105,7 +106,7 @@
     "              | +-- rodified flag in square brackets
     "              +-- full path to file in the buffer
     " Green Yellow Blue Red Cyan Black White Gray
-    hi CursorLine ctermbg=darkblue ctermfg=black cterm=NONE guibg=darkred guifg=white gui=NONE
+    hi CursorLine ctermbg=darkblue ctermfg=white cterm=NONE guibg=darkred guifg=white gui=NONE
     "hi CursorColumn cterm=NONE ctermbg=darkcyan ctermfg=white guibg=darkred guifg=white
     nnoremap <Leader>c :set cursorline! cursorcolumn!<CR>
 
@@ -132,18 +133,23 @@
     if has("autocmd")
         au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal g'\"" | endif
     endif
+    if $VIM_HATE_SPACE_ERRORS != '0' 
+        let c_space_errors=1
+    endif
 " }
 
 " Folding {
     set foldenable " Turn on folding
     set foldmarker={,} " Fold C style code (only use this as default if you use a high foldlevel)
     set foldmethod=marker " Fold on the marker
+    "set foldmethod=syntax
     set foldlevel=100 " Don't autofold anything (but I can still fold manually)
     set foldopen=block,hor,mark,percent,quickfix,tag " what movements open folds 
     function SimpleFoldText()
         return getline(v:foldstart).' '
     endfunction
     set foldtext=SimpleFoldText() " Custom fold text function (cleaner than default)
+    "set foldminlines=5
 " }
 
 " FileType Settings {
@@ -163,17 +169,28 @@
     " TagList Settings {
         "let Tlist_Auto_Open=1 
         let Tlist_Exit_OnlyWindow=1
-        let Tlist_WinWidth=24
+        let Tlist_WinWidth=25
     " }
     
     " Doxygen Settings {
-        let g:DoxygenToolkit_authorName="zhangbiao(zhangbiao@baidu.com)"
+        let g:DoxygenToolkit_authorName = "zhangbiao(zhangbiao@baidu.com)"
         let g:DoxygenToolkit_briefTag_funcName = "yes"
-        "let g:DoxygenToolkit_blockHeader="----------------------------------------------------------------------------"
-        "let g:DoxygenToolkit_blockFooter="----------------------------------------------------------------------------" 
-        let g:DoxygenToolkit_licenseTag="Copyright (c) 2011 Baidu.com, Inc. All Rights Reserved"
-        let g:doxygen_enhanced_color=1
+        "let g:DoxygenToolkit_blockHeader = "----------------------------------------------------------------------------"
+        "let g:DoxygenToolkit_blockFooter = "----------------------------------------------------------------------------" 
+        let g:DoxygenToolkit_licenseTag = "Copyright (c) 2012 Baidu.com, Inc. All Rights Reserved"
+        let g:doxygen_enhanced_color = 1
     " }
+    " WinManager Settings {
+        let g:winManagerWindowLayout = 'FileExplorer,TagList,TagsExplorer|BufExplorer'
+    " }
+" }
+
+" PowerLine {
+    let g:Powerline_symbols = 'fancy'
+" }
+
+" NERDTree {
+    let g:NERDChristmasTree = 1
 " }
 
 " Mappings {
@@ -181,6 +198,8 @@
     """Key mapping
     map <F12> :! ctags -R --fields=+lS .<CR>
     map <F8> :! perltidy -q<CR>
+    map <F9> :%s/[ \t]*$//g<CR>
+
     """Key mapping - Doxygen
     map <F3>a :DoxAuthor<CR>
     map <F3>f :Dox<CR>
@@ -189,6 +208,18 @@
     map <F3>l :DoxLic<CR>
     """Key mapping -Tlist
     map <F5>l :Tlist<CR>
+    map <C-w><C-l> :Tlist<CR>
+
+    """Windows Manager
+    map <C-w><C-f> :FirstExplorerWindow<CR>
+    map <C-w><C-b> :BottomExplorerWindow<CR>
+    map <C-w><C-w> :WMToggle<CR> 
+
+    """NERDTree
+    map <C-w><C-n> :NERDTreeToggle<CR>
+
+    """CommandT
+    map <C-w><C-t> :CommandT<CR>
 
     " space / shift-space scroll in normal mode
     "noremap <S-space> <C-b>
@@ -200,10 +231,10 @@
 
 " Autocommands {
     " Python {
-        autocmd BufWritePost *.py call Pyflakes()
-        autocmd BufWritePost *.py call Pep8()
-        "autocmd FileType python map <buffer> <F3> :call Pyflakes()<CR>
-        "autocmd FileType python map <buffer> <F4> :call Pep8()<CR>
+        "autocmd BufWritePost *.py call Pyflakes()
+        "autocmd BufWritePost *.py call Pep8()
+        "autocmd FileType python map <buffer> <F7> :call Pyflakes()<CR>
+        "autocmd FileType python map <buffer> <F6> :call Pep8()<CR>
     " }
     " Ruby {
         " ruby standard 2 spaces, always
@@ -233,12 +264,12 @@
 " GUI Settings {
 if has("gui_running") " {
     " Basics {
-        "colorscheme metacosm " my color scheme (only works in GUI)
-        "set guifont=Consolas:h10 " My favorite font
-        "set guioptions=ce 
+        colorscheme dejavu " my color scheme (only works in GUI)
+        set guioptions=ce 
         "               ||
         "               |+-- use simple dialogs rather than pop-ups
         "               +--- use GUI tabs, not console style tabs
+        set guifont=Yahei\ Mono\ for\ Powerline
         set lines=55 " perfect size for me
         set columns=120
         set mousehide " hide the mouse cursor when typing
