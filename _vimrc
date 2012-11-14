@@ -205,7 +205,7 @@
     """Key mapping
     map <F12> :! ctags -R --fields=+lS .<CR>
     map <F8> :! perltidy -q<CR>
-    map <F9> :%s/[ \t]*$//g<CR>
+    map <F9> :%s/\s\+$//e<CR>
 
     """Key mapping - Doxygen
     map <F3>a :DoxAuthor<CR>
