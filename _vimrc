@@ -163,6 +163,8 @@
     autocmd FileType make set noexpandtab
     autocmd FileType diff nmap <C-n> /^+\\|^-<CR>
     autocmd FileType svnlog nmap q :q<CR>
+    autocmd FileType otl set tabstop=2 
+    autocmd FileType otl set shiftwidth=2 
 " }
 
 " Plugin Settings {
