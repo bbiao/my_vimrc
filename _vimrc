@@ -200,6 +200,16 @@
     let g:rainbow_operators = 1
 " }
 
+" SimpleNote {
+    let g:SimplenoteUsername = "bbbiao@gmail.com"
+    let g:SimplenotePassword = ""
+" }
+
+" EverNote {
+    let g:evervim_username = "bbiao"
+    let g:evervim_password = "" 
+" }
+
 " Mappings {
     map <C-]> g]
     """Key mapping
