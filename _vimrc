@@ -67,7 +67,6 @@
     "set wildmenu " turn on command line completion wild style ignore these list file extensions
     "set wildignore=*.dll,*.o,*.obj,*.bak,*.exe,*.pyc,*.jpg,*.gif,*.png
     "set wildmode=list:longest " turn on wild mode huge list
-    set nocompatible
 " }
 
 " Vim UI {
@@ -188,11 +187,13 @@
 " }
 
 " PowerLine {
-    let g:Powerline_symbols = 'fancy'
+    "set guifont=yahei_mono-Powerline
+    "let g:Powerline_symbols = 'fancy'
 " }
 
 " NERDTree {
     let g:NERDChristmasTree = 1
+    let g:NERDTreeDirArrows = 0
 " }
 
 " Rainbow {
@@ -213,7 +214,7 @@
 " Mappings {
     map <C-]> g]
     """Key mapping
-    map <F12> :! ctags -R --fields=+lS .<CR>
+    map <F7> :! ctags -R --fields=+lS .<CR>
     map <F8> :! perltidy -q<CR>
     map <F9> :%s/\s\+$//e<CR>
 
@@ -250,8 +251,8 @@
     " Python {
         "autocmd BufWritePost *.py call Pyflakes()
         "autocmd BufWritePost *.py call Pep8()
-        "autocmd FileType python map <buffer> <F7> :call Pyflakes()<CR>
-        "autocmd FileType python map <buffer> <F6> :call Pep8()<CR>
+        "autocmd FileType python map <buffer> <F3> :call Pyflakes()<CR>
+        "autocmd FileType python map <buffer> <F4> :call Pep8()<CR>
     " }
     " Ruby {
         " ruby standard 2 spaces, always
