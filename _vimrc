@@ -169,8 +169,9 @@
 " Plugin Settings {
     " TagList Settings {
         "let Tlist_Auto_Open=1 
-        let Tlist_Exit_OnlyWindow=1
-        let Tlist_WinWidth=25
+        let Tlist_Exit_OnlyWindow = 1
+        let Tlist_WinWidth = 25
+        let Tlist_Show_One_File = 1
     " }
     
     " Doxygen Settings {
@@ -187,7 +188,9 @@
 " }
 
 " PowerLine {
-    "set guifont=yahei_mono-Powerline
+    "set rtp+=~/Library/Python/2.7/lib/python/site-packages/powerline/bindings/vim
+    "set guifont=Yahei\ Mono\ for\ Powerline
+    "set guifont=Droid\ Sans\ Mono\ for\ Powerline:h11
     "let g:Powerline_symbols = 'fancy'
 " }
 
@@ -287,7 +290,8 @@ if has("gui_running") " {
         "               ||
         "               |+-- use simple dialogs rather than pop-ups
         "               +--- use GUI tabs, not console style tabs
-        set guifont=Yahei\ Mono\ for\ Powerline
+        "set guifont=Yahei\ Mono\ for\ Powerline
+        set guifont=Droid\ Sans\ Mono\ for\ Powerline:h11
         set lines=55 " perfect size for me
         set columns=120
         set mousehide " hide the mouse cursor when typing
